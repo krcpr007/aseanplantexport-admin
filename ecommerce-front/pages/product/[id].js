@@ -1,8 +1,8 @@
 import Center from "@/components/Center";
 import Header from "@/components/Header";
 import Title from "@/components/Title";
-import {mongooseConnect} from "@/lib/mongoose";
-import {Product} from "@/models/Product";
+import { mongooseConnect } from "@/lib/mongoose";
+import { Product } from "@/models/Product";
 import styled from "styled-components";
 import WhiteBox from "@/components/WhiteBox";
 import ProductImages from "@/components/ProductImages";
@@ -28,7 +28,14 @@ const Price = styled.span`
   font-size: 1.4rem;
 `;
 
-export default function ProductPage({product}) {
+export default function ProductPage({ product }) {
+  const linkIfy = (text) => {
+    //eslint-disable-next-line
+    let urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    return text?.replace(urlRegex, function (url) {
+      return '<a style="color:#70B5F9;text-decoration:underline" target="_blank" className="hover:underline" href="' + url + '">' + url + '</a>';
+    });
+  }
   return (
     <>
       <Header />
@@ -39,7 +46,17 @@ export default function ProductPage({product}) {
           </WhiteBox>
           <div>
             <Title>{product.title}</Title>
-            <p>{product.description}</p>
+            {/* <p>{product.description}</p> */}
+            <p className='text-sm font-medium'>{product.description?.split(new RegExp('\r?\n', 'g')).map(function (item, idx) {
+              // it replace the enter key or \n  with <br/> tag.
+              return (
+                <span key={idx}>
+                  {<span dangerouslySetInnerHTML={{ __html: linkIfy(item) }} />}
+                  {/* {item} */}
+                  <br />
+                </span>
+              )
+            })}</p>
             <PriceRow>
               <div>
                 <Price>${product.price}</Price>
@@ -60,7 +77,7 @@ export default function ProductPage({product}) {
 
 export async function getServerSideProps(context) {
   await mongooseConnect();
-  const {id} = context.query;
+  const { id } = context.query;
   const product = await Product.findById(id);
   return {
     props: {
