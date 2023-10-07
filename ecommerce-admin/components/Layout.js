@@ -2,7 +2,6 @@ import { useSession, signIn, signOut } from "next-auth/react"
 import Nav from "@/components/Nav";
 import { useState } from "react";
 import Logo from "@/components/Logo";
-import Head from "next/head";
 export default function Layout({ children }) {
   const [showNav, setShowNav] = useState(false);
   const { data: session } = useSession();
@@ -18,9 +17,6 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <Head>
-        <title>Asean Plant Export</title>
-      </Head>
       <div className="bg-bgGray min-h-screen ">
         <div className="block md:hidden flex items-center p-4">
           <button onClick={() => setShowNav(true)}>
