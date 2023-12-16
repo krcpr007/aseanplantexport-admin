@@ -1,11 +1,11 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Spinner from "@/components/Spinner";
-import {subHours} from "date-fns";
+import { subHours } from "date-fns";
 
 export default function HomeStats() {
-  const [orders,setOrders] = useState([]);
-  const [isLoading,setIsLoading] = useState(false);
+  const [orders, setOrders] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     setIsLoading(true);
     axios.get('/api/orders').then(res => {
@@ -17,13 +17,15 @@ export default function HomeStats() {
   function ordersTotal(orders) {
     let sum = 0;
     orders.forEach(order => {
-      const {line_items} = order;
-      line_items.forEach(li => {
-        const lineSum = li.quantity * li.price_data.unit_amount / 100;
-        sum += lineSum;
-      });
+      const { line_items, paid } = order;
+      if (paid) { // it show only paid orders in the dashboard
+        line_items.forEach(li => {
+          const lineSum = li.quantity * li.price_data.unit_amount / 100;
+          sum += lineSum;
+        });
+      }
     });
-    console.log({orders});
+    console.log({ orders });
     return new Intl.NumberFormat('sv-SE').format(sum);
   }
 
@@ -35,9 +37,9 @@ export default function HomeStats() {
     );
   }
 
-  const ordersToday = orders.filter(o =>  new Date(o.createdAt) > subHours(new Date, 24));
-  const ordersWeek = orders.filter(o =>  new Date(o.createdAt) > subHours(new Date, 24*7));
-  const ordersMonth = orders.filter(o =>  new Date(o.createdAt) > subHours(new Date, 24*30));
+  const ordersToday = orders.filter(o => new Date(o.createdAt) > subHours(new Date, 24));
+  const ordersWeek = orders.filter(o => new Date(o.createdAt) > subHours(new Date, 24 * 7));
+  const ordersMonth = orders.filter(o => new Date(o.createdAt) > subHours(new Date, 24 * 30));
 
   return (
     <div>
