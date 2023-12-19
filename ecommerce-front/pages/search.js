@@ -1,11 +1,11 @@
 import Header from "@/components/Header";
-import Center from "@/components/Center";
+// import Center from "@/components/Center";
 import Input from "@/components/Input";
 import styled from "styled-components";
-import {useCallback, useEffect, useRef, useState} from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import ProductsGrid from "@/components/ProductsGrid";
-import {debounce} from "lodash";
+import { debounce } from "lodash";
 import Spinner from "@/components/Spinner";
 
 const SearchInput = styled(Input)`
@@ -22,9 +22,9 @@ const InputWrapper = styled.div`
 `;
 
 export default function SearchPage() {
-  const [phrase,setPhrase] = useState('');
-  const [products,setProducts] = useState([]);
-  const [isLoading,setIsLoading] = useState(false);
+  const [phrase, setPhrase] = useState('');
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const debouncedSearch = useCallback(
     debounce(searchProducts, 500), []
   );
@@ -38,7 +38,7 @@ export default function SearchPage() {
   }, [phrase]);
 
   function searchProducts(phrase) {
-    axios.get('/api/products?phrase='+encodeURIComponent(phrase))
+    axios.get('/api/products?phrase=' + encodeURIComponent(phrase))
       .then(response => {
         setProducts(response.data);
         setIsLoading(false);
@@ -47,7 +47,9 @@ export default function SearchPage() {
   return (
     <>
       <Header />
-      <Center>
+      {/* <Center> */}.
+      <div className="container">
+
         <InputWrapper>
           <SearchInput
             autoFocus
@@ -55,16 +57,17 @@ export default function SearchPage() {
             onChange={ev => setPhrase(ev.target.value)}
             placeholder="Search for products..." />
         </InputWrapper>
-        {!isLoading && phrase !== '' && products.length === 0 && (
-          <h2>No products found for query "{phrase}"</h2>
-        )}
-        {isLoading && (
-          <Spinner fullWidth={true} />
-        )}
-        {!isLoading && products.length > 0 && (
-          <ProductsGrid products={products} />
-        )}
-      </Center>
+      </div>
+      {!isLoading && phrase !== '' && products.length === 0 && (
+        <h2>No products found for query "{phrase}"</h2>
+      )}
+      {isLoading && (
+        <Spinner fullWidth={true} />
+      )}
+      {!isLoading && products.length > 0 && (
+        <ProductsGrid products={products} />
+      )}
+      {/* </Center> */}
     </>
   );
 }
