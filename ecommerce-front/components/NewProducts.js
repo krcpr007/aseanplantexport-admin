@@ -8,11 +8,13 @@ const Title = styled.h2`
   font-weight: normal;
 `;
 
-export default function NewProducts({products,wishedProducts}) {
+export default function NewProducts({ products, wishedProducts }) {
   return (
-    <Center>
-      <Title>New Arrivals</Title>
+    <>
+      <Center>
+        <Title>New Arrivals</Title>
+      </Center>
       <ProductsGrid products={products} wishedProducts={wishedProducts} />
-    </Center>
+    </>
   );
 }
