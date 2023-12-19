@@ -13,10 +13,10 @@ export default function ProductsPage({products,wishedProducts}) {
   return (
     <>
       <Header />
-      <Center>
+      {/* <Center> */}
         <Title>All products</Title>
         <ProductsGrid products={products} wishedProducts={wishedProducts} />
-      </Center>
+      {/* </Center> */}
     </>
   );
 }

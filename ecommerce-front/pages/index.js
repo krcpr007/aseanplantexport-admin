@@ -10,10 +10,17 @@ import { Setting } from "@/models/Setting";
 import Footer from "@/components/Footer";
 import WelcomeNote from "@/components/WelcomeNote";
 import BestSelling from "@/components/BestSelling";
+import Head from "next/head";
 // import '../styles/globals.css'
 export default function HomePage({ featuredProduct, newProducts, wishedNewProducts }) {
   return (
     <>
+      <Head>
+        <title>Asean Plant Export | Thailand Supplier of Thai Plants | Rhizome, Tubers, Bulbs, Seeds, Hoy</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Asean Plant Export is one of the World class supplier from Thailand for Seeds, Rhizome, Tubers, Bulbs and Musa world wide" />
+        <meta name="keywords" content="Caudex Plants, Flowering Plants, Shrubs, Fruit Trees, Hoya Plants, Hoya Rooted Cuttings, Mangrove, Musa, Banana, Materials & Decoration, Seeds, Tuber, Bulbs, Rhizomes, Waterlily , Aquatic Plants, Adenium,Plumeria, Lotus Rhizomes, Giant Grafted Hibiscus, Books" />
+      </Head>
       <Header />
       <div class="container">
         <div class="hero">
