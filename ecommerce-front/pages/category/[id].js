@@ -80,7 +80,8 @@ export default function CategoryPage({
   return (
     <>
       <Header />
-      <Center>
+      {/* <di className="container"> */}
+      <div className="container">
         <CategoryHeader>
           <h1>{category.name}</h1>
           <FiltersWrapper>
@@ -113,6 +114,7 @@ export default function CategoryPage({
             </Filter>
           </FiltersWrapper>
         </CategoryHeader>
+        </div>
         {loadingProducts && (
           <Spinner fullWidth />
         )}
@@ -126,7 +128,7 @@ export default function CategoryPage({
             )}
           </div>
         )}
-      </Center>
+      {/* </di> */}
     </>
   );
 }
