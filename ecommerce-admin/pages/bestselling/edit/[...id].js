@@ -27,7 +27,7 @@ export default function EditProductPage() {
                 <Spinner />
             )}
             {productInfo && (
-                <ProductForm {...productInfo} />
+                <ProductForm {...productInfo} api={'/api/bestsellings'} />
             )}
         </Layout>
     );

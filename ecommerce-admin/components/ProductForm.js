@@ -48,7 +48,8 @@ export default function ProductForm({
     setGoToProducts(true);
   }
   if (goToProducts) {
-    router.push('/products');
+   let route = api.substring(4)
+    router.push(route);
   }
   async function uploadImages(ev) {
     const files = ev.target?.files;
