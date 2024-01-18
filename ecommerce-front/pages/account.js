@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/landingPageElement/Header";
 import Title from "@/components/Title";
 import Center from "@/components/Center";
 import { signIn, signOut, useSession } from "next-auth/react";
@@ -32,7 +32,7 @@ const CityHolder = styled.div`
 const WishedProductsGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 20px;
 `;
 
 export default function AccountPage() {
@@ -137,11 +137,14 @@ export default function AccountPage() {
                     )}
                     {wishlistLoaded && (
                       <>
-                        <WishedProductsGrid>
+                        {/* <WishedProductsGrid> */}
+                        <div className="w-max grid grid-cols-1">
+
                           {wishedProducts.length > 0 && wishedProducts.map(wp => (
-                            <ProductBox key={wp._id} {...wp} wished={true} onRemoveFromWishlist={productRemovedFromWishlist} />
-                          ))}
-                        </WishedProductsGrid>
+                            <ProductBox width={'small'} key={wp._id} {...wp} wished={true} onRemoveFromWishlist={productRemovedFromWishlist} />
+                            ))}
+                            </div>
+                        {/* </WishedProductsGrid> */}
                         {wishedProducts.length === 0 && (
                           <>
                             {session && (

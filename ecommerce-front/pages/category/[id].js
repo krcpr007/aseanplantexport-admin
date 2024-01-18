@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/landingPageElement/Header";
 import Title from "@/components/Title";
 import Center from "@/components/Center";
 import {Category} from "@/models/Category";

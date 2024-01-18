@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/landingPageElement/Header";
 import styled from "styled-components";
 import Center from "@/components/Center";
 import Button from "@/components/Button";

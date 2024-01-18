@@ -1,443 +1,82 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-  overflow: hidden scroll;
-  overflow-y: hidden scroll;
-}
-
-:root {
-  --green-color: #06c100;
-}
-h1,
-h2,
-h3,
-h4,
-a,
-p {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  text-align: center;
-}
-
-h2 {
-  font-size: 2rem;
-}
-h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-}
-p {
-  margin-bottom: 0.5rem;
-}
-
-img {
-  max-width: 100%;
-}
-
-.row {
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  width: 80%;
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-/* navbar stuff*/
-label {
-  font-size: 2rem;
-  cursor: pointer;
-}
-.header-row {
-  display: flex;
-  justify-content: flex-end;
-}
-#toggle {
-  display: none;
-}
-
-.nav-links {
-  padding: 1rem 0;
+/*      ------------------------------------------   */
+#menu-toggle:checked + #menu {
   display: block;
-  color: black;
-  text-decoration: none;
 }
 
-/*navbar end*/
-
-/*hero*/
-
-.hero {
-  text-align: center;
-  font-weight: black;
-}
-.hero h1 {
-  font-size: 2.7rem;
-  padding: 2rem 0 3rem 0;
+#dropdown-toggle:checked + #dropdown {
+  display: block;
 }
 
-.hero span {
-  color: var(--green-color);
-  font-size: 4rem;
-}
-
-.hero__image {
-  display: none;
-}
-
-.hero__text {
-  margin-bottom: 10rem;
-}
-/*heroend*/
-
+a,
 span {
-  color: var(--green-color);
-}
-.section-image {
-  margin: 1.5rem 0;
-  object-fit: cover;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-/*section1 start*/
-/* hr {
-  width: 30%;
-  margin: 0 auto;
-  border: none;
-  height: 4px;
-  background-color: black;
+a.arrow,
+span.arrow {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+a.arrow .arrow_icon,
+span.arrow .arrow_icon {
+  position: relative;
+  margin-left: 0.5em;
+}
+
+a.arrow .arrow_icon svg,
+span.arrow .arrow_icon svg {
+  transition: transform 0.3s 0.02s ease;
+  margin-right: 1em;
+}
+
+a.arrow .arrow_icon::before,
+span.arrow .arrow_icon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #38b2ac;
+  transform: translateY(-50%);
+  transition: width 0.3s ease;
+}
+
+a.arrow:hover .arrow_icon::before,
+span.arrow:hover .arrow_icon::before {
+  width: 1em;
+}
+
+a.arrow:hover .arrow_icon svg,
+span.arrow:hover .arrow_icon svg {
+  transform: translateX(0.75em);
+}
+
+/* .cover {
+  border-bottom-right-radius: 128px;
 } */
 
-.section-text {
-  margin: 1rem 0;
+.bg-blue-teal-gradient {
+  background: rgb(49, 130, 206);
+  background: linear-gradient(
+    90deg,
+    rgba(49, 130, 206, 1) 0%,
+    rgba(56, 178, 172, 1) 100%
+  );
 }
 
-/*section1 end*/
-
-/*section2*/
-.section2 {
-  padding: 2rem 0;
-}
-.section2 img {
-  height: 300px;
-  width: 100%;
-  object-fit: cover;
-  margin-top: 2rem;
-}
-.image-container img {
-  cursor: pointer;
-  transition: 0.5s;
-  display: block;
-}
-
-.section2 .image-container p {
-  font-size: 1.5rem;
-  text-decoration: underline;
-}
-.section2 .image-container hr {
-  margin: 0;
-  border: none;
-  height: 5px;
-  background-color: black;
-  width: 0%;
-  align-items: flex-start;
-  transition: 1s;
-}
-
-.image-container:hover img {
-  opacity: 80%;
-}
-
-.image-container:hover hr {
-  width: 100%;
-}
-/*section2 end*/
-
-/*section3*/
-.section3 hr {
-  width: 30%;
-  margin: 0 auto;
-  border: none;
-  height: 4px;
-  background-color: black;
-}
-
-.section3 .section3-content {
-  margin: 1rem 0;
-  justify-content: flex-start;
-}
-
-.section3 .section-image3 img {
-  margin-top: 1rem;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-/*section3 end */
-
-/*background stuff Must disable in desktop mode/ looks good only on mobile to remove from desktop "add in your @media display:none"*/
-.background-image {
-  position: absolute;
-  left: -130px;
-  z-index: -1;
-  opacity: 60%;
-}
-
-.dots {
-  border-radius: 50%;
-  background-color: var(--green-color);
-  position: absolute;
-  z-index: -2;
-}
-
-.dot1 {
-  height: 200px;
-  width: 200px;
-  right: -110px;
-  bottom: 34%;
-}
-
-.dot2 {
-  height: 400px;
-  width: 400px;
-  bottom: -230%;
-  left: -220px;
-}
-
-#form {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.form-input {
-  margin-top: 1em;
-  padding: 1em;
-  border: none;
-  background-color: rgb(221, 221, 221);
-}
-
-.form-button {
-  margin-top: 1em;
-  border: none;
-  padding: 1em;
-  background-color: var(--green-color);
-}
-
-/*end of background stuff*/
-@media (min-width: 800px) {
-  label {
-    display: none;
+/* @media (min-width: 1024px) {
+  .cover {
+    border-bottom-right-radius: 256px;
   }
-
-  .menu {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    border: none;
-    justify-content: center;
-  }
-
-  .menu .nav-links {
-    margin-inline: 2rem;
-    font-size: 1.3rem;
-  }
-  .menu .nav-links:hover {
-    opacity: 50%;
-    color: green;
-  }
-}
-
-@media (min-width: 800px) and (max-width: 1000px) {
-  .section1,
-  .section2 {
-    margin-bottom: 6rem;
-  }
-  .section2 .row {
-    flex-direction: row;
-  }
-
-  .section2 .image-container {
-    flex-basis: 100%;
-  }
-
-  .image-container + .image-container {
-    margin-left: 1rem;
-  }
-
-  .hidden-ipad {
-    display: none;
-  }
-}
-
-@media (min-width: 1000px) {
-  #form {
-    width: 100%;
-  }
-
-  .form-input {
-    margin-top: 1em;
-    padding: 1em;
-    border: none;
-    background-color: rgb(221, 221, 221);
-  }
-
-  .form-button {
-    margin-top: 1em;
-    border: none;
-    padding: 1em;
-    background-color: var(--green-color);
-  }
-
-  .dots {
-    border-radius: 50%;
-    background-color: var(--green-color);
-    position: absolute;
-    z-index: -2;
-  }
-
-  .dot3 {
-    height: 600px;
-    width: 700px;
-    left: -210px;
-    bottom: -30%;
-  }
-
-  .dot4 {
-    height: 600px;
-    width: 600px;
-    right: -190px;
-    bottom: -160%;
-  }
-
-  .dot5 {
-    height: 500px;
-    width: 500px;
-    right: -210px;
-    bottom: 40%;
-  }
-
-  .section1,
-  .section2,
-  .section3 {
-    margin-bottom: 6rem;
-  }
-
-  .container__more-space {
-    width: 100%;
-  }
-  .section2 .image-container {
-    flex-basis: 100%;
-  }
-  h2 {
-    font-size: 3rem;
-  }
-  h3 {
-    font-size: 2.5rem;
-  }
-  p {
-    font-size: 1.6rem;
-  }
-
-  .dot1,
-  .dot2 {
-    display: none;
-  }
-  .background-image {
-    display: none;
-  }
-
-  .row {
-    flex-direction: row;
-  }
-  .flex-basis {
-    flex-basis: 100%;
-  }
-
-  /*hero*/
-
-  .hero {
-    margin-bottom: 6rem;
-  }
-  .hero__text {
-    margin-top: 10rem;
-  }
-
-  .hero .hero-title {
-    font-size: 4rem;
-    text-align: start;
-  }
-
-  .hero .hero-text {
-    text-align: start;
-  }
-  .hero span {
-    font-size: 6rem;
-  }
-
-  .hero__image {
-    display: block;
-  }
-
-  /*hero end*/
-
-  /*section1*/
-
-  .hidden-desktop {
-    display: none;
-  }
-
-  .section__title {
-    margin-bottom: 4rem;
-  }
-
-  .section-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .section-text {
-    margin-top: 5rem;
-    padding-inline: 2rem;
-  }
-
-  /*section1 end */
-
-  /*section2*/
-  .image-container + .image-container {
-    margin-left: 3rem;
-  }
-  /*section2 end*/
-
-  /*section3*/
-
-  .section3 {
-    margin: 0;
-  }
-  .contact-text {
-    width: 50%;
-    margin: 0 auto;
-  }
-
-  .contact-text p {
-    text-align: start;
-  }
-  /*section3 end*/
-}
-
-.section {
-  border: 5px solid green;
-  height: 80vh;
-  margin-bottom: 5em;
-}
+} */
