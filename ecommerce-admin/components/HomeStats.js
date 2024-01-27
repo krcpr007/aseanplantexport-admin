@@ -25,7 +25,7 @@ export default function HomeStats() {
         });
       }
     });
-    console.log({ orders });
+
     return new Intl.NumberFormat('sv-SE').format(sum);
   }
 
