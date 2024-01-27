@@ -88,10 +88,11 @@ function Header() {
                                     <Link className="py-2 inline-block md:text-white md:px-2 font-semibold"
                                         href="/categories">Categories</Link>
                                 </li>
-                                <li className="md:ml-4 md:hidden lg:block"><Link className="py-2 inline-block md:text-white md:px-2 font-semibold"
-                                    href="/cart">Cart</Link></li>
                                 <li className="md:ml-4"><a className="py-2 inline-block md:text-white md:px-2 font-semibold" href="#">Contact
                                     Us</a></li>
+                                <li className="md:ml-4"><Link className="py-2 inline-block md:text-white md:px-2 font-semibold" href="/account">Account</Link></li>
+                                <li className="md:ml-4 md:hidden lg:block"><Link className="py-2 inline-block md:text-white md:px-2 font-semibold"
+                                    href="/cart">Cart</Link></li>
                                 <li className="md:ml-6 mt-3 md:mt-0">
                                     <Link className="inline-block font-semibold px-4 py-2 text-white bg-green-600 md:bg-transparent md:text-white border border-white rounded" href="/products">See All Products</Link>
                                 </li>
