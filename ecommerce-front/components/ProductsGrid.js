@@ -19,7 +19,7 @@ export default function ProductsGrid({ products, wishedProducts = [] }) {
       <div className="md:px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 space-y-4 md:space-y-0">
         {products?.length > 0 && products.map((product, index) => (
           // <RevealWrapper key={product._id} delay={index * 50}>
-          <ProductBox {...product} wished={wishedProducts.includes(product._id)} />
+          <ProductBox {...product} wished={wishedProducts.includes(product._id)}  key={product._id}/>
           // </RevealWrapper>
 
           // <div className="min-h-screen bg-gray-900 flex items-center">
