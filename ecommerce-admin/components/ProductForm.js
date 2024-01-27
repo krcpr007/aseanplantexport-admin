@@ -24,14 +24,27 @@ export default function ProductForm({
   const [isUploading, setIsUploading] = useState(false);
   const [categories, setCategories] = useState([]);
   const [categoriesLoading, setCategoriesLoading] = useState(false);
+  const [categoryName ,setCategoryName] = useState('')
   const router = useRouter();
   useEffect(() => {
     setCategoriesLoading(true);
     axios.get('/api/categories').then(result => {
       setCategories(result.data);
       setCategoriesLoading(false);
+    }).catch((err)=>{
+      console.log(err)
     })
   }, []);
+  async function fetchCategoryName(categoryId) {
+    try {
+      const response = await axios.get(`/api/categories/${categoryId}`);
+      const categoryName = response.data.name;
+      setCategoryName(categoryName);
+    } catch (error) {
+      console.error("Error fetching category name:", error);
+    }
+  }
+
   async function saveProduct(ev) {
     ev.preventDefault();
     const data = {
@@ -58,6 +71,8 @@ export default function ProductForm({
       const data = new FormData();
       for (const file of files) {
         data.append('file', file);
+        data.append('categoryId',category)
+        data.append('categoryName',categoryName)
       }
       const res = await axios.post('/api/upload', data);
       setImages(oldImages => {
@@ -87,6 +102,11 @@ export default function ProductForm({
       catInfo = parentCat;
     }
   }
+  const handleCategoryChange = async (ev) => {
+    const selectedCategoryId = ev.target.value;
+    setCategory(selectedCategoryId);
+    await fetchCategoryName(selectedCategoryId);
+  };
 
   return (
     <form onSubmit={saveProduct}>
@@ -98,7 +118,7 @@ export default function ProductForm({
         onChange={ev => setTitle(ev.target.value)} />
       <label>Category</label>
       <select value={category}
-        onChange={ev => setCategory(ev.target.value)}>
+       onChange={handleCategoryChange}>
         <option value="">Uncategorized</option>
         {categories.length > 0 && categories.map(c => (
           <option  key={c._id} value={c._id}>{c.name}</option>
