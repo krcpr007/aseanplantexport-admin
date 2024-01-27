@@ -17,7 +17,7 @@ export default async function handle(req,res) {
       resolve({fields,files});
     });
   });
-  console.log('length:', files.file.length);
+
   const client = new S3Client({
     region: 'ap-south-1',
     credentials: {
@@ -27,8 +27,10 @@ export default async function handle(req,res) {
   });
   const links = [];
   for (const file of files.file) {
+    const categoryName = fields.categoryName[0];
     const ext = file.originalFilename.split('.').pop();
-    const newFilename = Date.now() + '.' + ext;
+    // const newFilename = Date.now() + '.' + ext;
+    const newFilename = `${categoryName}/${file.originalFilename}`;
     await client.send(new PutObjectCommand({
       Bucket: bucketName,
       Key: newFilename,
