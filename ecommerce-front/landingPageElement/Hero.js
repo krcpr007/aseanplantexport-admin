@@ -13,7 +13,7 @@ function Hero() {
                     {/* <img src="/flower-coverpage.jpg" alt="" className="w-full h-full object-cover opacity-20" /> */}
                 </div>
 
-                <div className="lg:w-3/4 xl:w-2/4 relative z-10 h-100 lg:mt-16">
+                <div className="lg:w-3/4 xl:w-2/4 relative z-10 h-100 lg:mt-12">
                     <div>
                         <h1 className="text-black text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">A better life starts with a
                             beautiful
