@@ -1,8 +1,8 @@
-import Header from "@/components/Header";
+import Header from "@/landingPageElement/Header";
 import Center from "@/components/Center";
 import {Category} from "@/models/Category";
 import {Product} from "@/models/Product";
-import ProductBox from "@/components/ProductBox";
+import SmallProductBox from "@/components/SmallProductBox";
 import styled from "styled-components";
 import Link from "next/link";
 import {RevealWrapper} from "next-reveal";
@@ -66,7 +66,7 @@ export default function CategoriesPage({mainCategories,categoriesProducts,wished
             <CategoryGrid>
               {categoriesProducts[cat._id].map((p,index) => (
                 <RevealWrapper delay={index*50}>
-                  <ProductBox {...p} wished={wishedProducts.includes(p._id)} />
+                  <SmallProductBox {...p} wished={wishedProducts.includes(p._id)} />
                 </RevealWrapper>
               ))}
               <RevealWrapper delay={categoriesProducts[cat._id].length*50}>
