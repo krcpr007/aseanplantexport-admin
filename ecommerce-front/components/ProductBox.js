@@ -140,24 +140,23 @@ export default function ProductBox({ _id, title, description, price, images, wis
       <Toaster/> */}
 
 
-      <div className="w-72 bg-white shadow-md relative rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+      <div className="w-64 bg-white shadow-md relative rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
         <div className="relative">
           <Link href={url}>
-             <Image className="w-full rounded-xl" width={400} height={100} priority={false} loading="lazy" src={images[0]} alt="" />
+             <Image className="w-full rounded-t-xl card-img-top" width={400} height={100} priority={false} loading="lazy" src={images[0]} alt="" />
           </Link>
-          <p className="absolute top-0 bg-green-400 text-sm text-gray-800 font-semibold py-1 px-1 rounded-br-lg rounded-tl-lg">${price}</p>
+          {/* <p className="absolute top-0 bg-green-400 text-sm text-gray-800 font-semibold py-1 px-1 rounded-br-lg rounded-tl-lg">${price}</p> */}
           <WishlistButton wished={isWished} title="Whishlist" onClick={addToWishlist}>
             {isWished ? <HeartSolidIcon className="text-2xl" /> : <HeartOutlineIcon className="text-2xl" />}
           </WishlistButton>
         </div>
-        <div className="px-4 py-3 w-72">
-                {/* <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span> */}
+        <div className="px-4 py-3 w-64">
                 <p className="text-lg font-bold text-black truncate block capitalize">{title}</p>
                 <div className="flex items-center">
                     <p className="text-lg font-semibold text-black cursor-auto my-3">${price}</p>
                     <div className="ml-auto">
-                    <FlyingButton _id={_id} src={images?.[0]}> <FaCartArrowDown className="text-2xl"/></FlyingButton>
-                      </div>
+                        <FlyingButton _id={_id} src={images?.[0]}> <FaCartArrowDown className="text-2xl"/></FlyingButton>
+                    </div>
                 </div>
             </div>
       </div>
