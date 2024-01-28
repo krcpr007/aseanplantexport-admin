@@ -103,7 +103,7 @@ function Footer() {
                                         </svg>
                                     </span>
                                     <span className="ml-3">
-                                        dentalpro@example.com
+                                        peter@example.com
                                     </span>
                                 </a>
                             </li>
@@ -155,6 +155,9 @@ function Footer() {
                     </div>
                 </div>
             </footer>
+            <div className='bg-gray-900 pb-10'>
+                <p className='text-gray-600 text-center text-xs'>Website Design and Developed by : <a href="https://krcpr007.vercel.app/" className='animate-pulse text-gray-400 underline' target='_blank'>Rajan Kumar</a> &copy; 2023 </p>
+            </div>
             {/* <!-- end footer --> */}
         </>
     )
