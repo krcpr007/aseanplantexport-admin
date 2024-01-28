@@ -17,7 +17,7 @@ export default function FewProducts({ newProducts, wishedNewProducts }) {
             Recent Products{" "}
             <span className="text-white">from Aseanplantexport</span>{" "}
           </h1>
-          <p className="px-20 text-white">
+          <p className="px-5 md:px-20 text-white">
             We’re constantly introducing new and exciting additions to ensure
             your store remains at the forefront of the industry. Our range of
             wholesale tropical plants is continuously expanding, keeping pace
@@ -40,7 +40,7 @@ export default function FewProducts({ newProducts, wishedNewProducts }) {
         {newProducts.map((product, index) => {
           return (
             <>
-              <ProductBox {...product} wished={wishedNewProducts.includes(product._id)} />
+              <ProductBox {...product} wished={wishedNewProducts.includes(product._id)} key={product._id} />
             </>
           );
         })}
