@@ -14,6 +14,7 @@ import ProductBox from "@/components/ProductBox";
 import Tabs from "@/components/Tabs";
 import SingleOrder from "@/components/SingleOrder";
 import toast, { Toaster } from 'react-hot-toast';
+import SmallProductBox from "@/components/SmallProductBox";
 const ColsWrapper = styled.div`
   display:grid;
   grid-template-columns: 1.2fr .8fr;
@@ -141,7 +142,7 @@ export default function AccountPage() {
                         <div className="w-max grid grid-cols-1">
 
                           {wishedProducts.length > 0 && wishedProducts.map(wp => (
-                            <ProductBox width={'small'} key={wp._id} {...wp} wished={true} onRemoveFromWishlist={productRemovedFromWishlist} />
+                            <SmallProductBox width={'small'} key={wp._id} {...wp} wished={true} onRemoveFromWishlist={productRemovedFromWishlist} />
                             ))}
                             </div>
                         {/* </WishedProductsGrid> */}
