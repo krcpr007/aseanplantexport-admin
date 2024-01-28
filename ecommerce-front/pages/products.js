@@ -14,8 +14,8 @@ export default function ProductsPage({ products, wishedProducts }) {
     <>
       <Header />
       {/* <Center> */}
-      <Title>All products</Title>
-      <ProductsGrid products={products} wishedProducts={wishedProducts} />
+      {/* <Title>All products</Title> */}
+      <ProductsGrid title={"All products"} products={products} wishedProducts={wishedProducts} />
       {/* </Center> */}
     </>
   );
