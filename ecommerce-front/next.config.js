@@ -4,6 +4,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    domains: ["plant-ecommerce.s3.amazonaws.com"],
+  },
 }
 
 module.exports = nextConfig
