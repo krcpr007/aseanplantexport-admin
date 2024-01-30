@@ -83,7 +83,7 @@ export default function CategoryPage({
       {/* <di className="container"> */}
       <div className="container">
         <CategoryHeader>
-          <h1>{category.name}</h1>
+          {/* <h1>{category.name}</h1> */}
           <FiltersWrapper>
             {category.properties.map(prop => (
               <Filter key={prop.name}>
@@ -121,7 +121,7 @@ export default function CategoryPage({
         {!loadingProducts && (
           <div>
             {products.length > 0 && (
-              <ProductsGrid products={products} />
+              <ProductsGrid title={category.name} products={products} />
             )}
             {products.length === 0 && (
               <div>Sorry, no products found</div>
