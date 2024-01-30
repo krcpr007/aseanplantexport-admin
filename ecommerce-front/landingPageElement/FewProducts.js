@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 import ProductBox from "@/components/ProductBox";
 export default function FewProducts({ newProducts, wishedNewProducts }) {
   return (
@@ -17,7 +17,7 @@ export default function FewProducts({ newProducts, wishedNewProducts }) {
             Recent Products{" "}
             <span className="text-white">from Aseanplantexport</span>{" "}
           </h1>
-          <p className="px-5 md:px-20 text-white">
+          <p className="px-5 md:px-20 text-white text-justify">
             We’re constantly introducing new and exciting additions to ensure
             your store remains at the forefront of the industry. Our range of
             wholesale tropical plants is continuously expanding, keeping pace
@@ -35,15 +35,20 @@ export default function FewProducts({ newProducts, wishedNewProducts }) {
       </div>
       <div
         id="Projects"
-        className="py-10 w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5"
+        className="py-10 w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-8 md:gap-y-20 gap-x-5 md:gap-x-14 mt-10 mb-5"
       >
-        {newProducts.map((product, index) => {
+        {newProducts.map((product) => {
           return (
             <>
               <ProductBox {...product} wished={wishedNewProducts.includes(product._id)} key={product._id} />
             </>
           );
         })}
+      </div>
+      <div className="flex justify-center                                 ">
+        <Link href="/categories">
+          <button className="bg-custom-green text-white px-5 py-2 rounded-lg mb-10 font-medium"> View Category </button>
+         </Link>
       </div>
     </section>
   );
