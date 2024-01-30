@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext,useState, useEffect } from 'react'
 import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { FaLocationDot } from "react-icons/fa6";
 import { VscAccount } from "react-icons/vsc";
-import { FaHeart, FaPhoneAlt } from "react-icons/fa";
+import { FaHeart, FaPhoneAlt ,FaSearch } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import Link from 'next/link'
 import { CartContext } from "@/components/CartContext";
@@ -16,22 +16,28 @@ function Header() {
                     <div className="">
                         <ul className="flex text-white font-medium ">
                             <li>
-                                <div className="flex items-center">
+                                <div className="flex items-center h-10">
                                     <FaLocationDot className='text-xl' />
                                     <span className="ml-2">1985 Kerry Way, Whittier, CA, USA</span>
                                 </div>
                             </li>
                             <li className="ml-6">
-                                <div className="flex items-center">
+                                <div className="flex items-center h-10">
                                     <FaPhoneAlt className='text-xl' />
                                     <span className="ml-2">+1 562-789-1935</span>
                                 </div>
                             </li>
+                            
                         </ul>
                     </div>
 
                     <div className="">
                         <ul className="flex  text-white">
+                            <li className="flex items-center">
+                            <Link href={'/search'}> 
+                                <FaSearch className='text-xl' />
+                            </Link>
+                            </li>
                             <li className="">
                                 <TfiHeadphoneAlt className='text-xl mx-2' />
                             </li>
