@@ -35,13 +35,11 @@ export default function FewProducts({ newProducts, wishedNewProducts }) {
       </div>
       <div
         id="Projects"
-        className="py-10 w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-8 md:gap-y-20 gap-x-5 md:gap-x-14 mt-10 mb-5"
+        className="py-10 w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-8 md:gap-y-20 gap-x-0 md:gap-x-14 mt-5 mb-5"
       >
         {newProducts.map((product) => {
           return (
-            <>
               <ProductBox {...product} wished={wishedNewProducts.includes(product._id)} key={product._id} />
-            </>
           );
         })}
       </div>
