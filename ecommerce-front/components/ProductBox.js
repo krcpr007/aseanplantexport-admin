@@ -116,6 +116,19 @@ export default function ProductBox({ _id, title, description, price, images, wis
     });
     setIsWished(nextValue);
   }
+  function convertURL(originalURL) {
+    // this function made for below problem as it was not showing in the browser so i have to come with solution.
+    /*
+    let originalURL = "https://plant-ecommerce.s3.amazonaws.com/catalog/++CM Begonia/bowerae tiger.png";
+    let convertedURL = convertURL(originalURL);
+    console.log(convertedURL); // Output: "https://plant-ecommerce.s3.ap-south-1.amazonaws.com/catalog/%2B%2BCM%20Begonia/bowerae%20tiger.png"
+    */
+    // Replace characters as needed
+    let convertedURL = originalURL.replace(/\+/g, '%2B')
+                                  .replace(/\+/g, '%20')
+                                  .replace(/ /g, '%20');
+    return convertedURL;
+}
   return (
     <>
       {/* <ProductWrapper>
@@ -143,7 +156,7 @@ export default function ProductBox({ _id, title, description, price, images, wis
       <div className="w-64 bg-white shadow-md relative rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
         <div className="relative">
           <Link href={url}>
-             <Image className="w-full rounded-t-xl card-img-top" width={400} height={100} priority={false} loading="lazy" src={images[0]} alt="" />
+             <Image className="w-full rounded-t-xl card-img-top" width={400} height={100} priority={false} loading="lazy" src={convertURL(images[0])} alt="" />
           </Link>
           {/* <p className="absolute top-0 bg-green-400 text-sm text-gray-800 font-semibold py-1 px-1 rounded-br-lg rounded-tl-lg">${price}</p> */}
           <WishlistButton wished={isWished} title="Whishlist" onClick={addToWishlist}>

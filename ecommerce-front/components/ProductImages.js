@@ -32,11 +32,24 @@ const BigImageWrapper = styled.div`
 `;
 
 export default function ProductImages({images}) {
+  function convertURL(originalURL) {
+    // this function made for below problem as it was not showing in the browser so i have to come with solution.
+    /*
+    let originalURL = "https://plant-ecommerce.s3.amazonaws.com/catalog/++CM Begonia/bowerae tiger.png";
+    let convertedURL = convertURL(originalURL);
+    console.log(convertedURL); // Output: "https://plant-ecommerce.s3.ap-south-1.amazonaws.com/catalog/%2B%2BCM%20Begonia/bowerae%20tiger.png"
+    */
+    // Replace characters as needed
+    let convertedURL = originalURL.replace(/\+/g, '%2B')
+                                  .replace(/\+/g, '%20')
+                                  .replace(/ /g, '%20');
+    return convertedURL;
+}
   const [activeImage,setActiveImage] = useState(images?.[0]);
   return (
     <>
       <BigImageWrapper>
-        <BigImage src={activeImage} />
+        <BigImage src={convertURL(activeImage)} />
       </BigImageWrapper>
       <ImageButtons>
         {images.map(image => (
@@ -44,7 +57,7 @@ export default function ProductImages({images}) {
             key={image}
             active={image===activeImage}
             onClick={() => setActiveImage(image)}>
-            <Image src={image} alt=""/>
+            <Image src={convertURL(image)} alt=""/>
           </ImageButton>
         ))}
       </ImageButtons>
