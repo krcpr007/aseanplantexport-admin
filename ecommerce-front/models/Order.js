@@ -8,8 +8,10 @@ const OrderSchema = new Schema({
   city:String,
   postalCode:String,
   streetAddress:String,
+  state_province: String,
   country:String,
   paid:Boolean,
+  commentsAboutOrder:String, // for taking comments from the user at time of delivery method.
 }, {
   timestamps: true,
 });
