@@ -130,6 +130,12 @@ function SmallProductBox({
       });
     setIsWished(nextValue);
   }
+  const convertedURL = (originalURL)=> {
+    let convertedURL = originalURL.replace(/\+/g, '%2B')
+    .replace(/\+/g, '%20')
+    .replace(/ /g, '%20');
+return convertedURL;
+  }
   return (
     <>
       <ProductWrapper>
@@ -138,7 +144,7 @@ function SmallProductBox({
             <WishlistButton wished={isWished} onClick={addToWishlist}>
               {isWished ? <HeartSolidIcon /> : <HeartOutlineIcon />}
             </WishlistButton>
-            <img src={images?.[0]} alt="" />
+            <img src={convertedURL(images?.[0])} alt="" />
           </div>
         </WhiteBox>
         <ProductInfoBox>
@@ -146,7 +152,7 @@ function SmallProductBox({
           <PriceRow>
             <Price>${price}</Price>
             <FlyingButton _id={_id} src={images?.[0]}>
-              Add to cart
+              <FaCartArrowDown className="text-xl"/>
             </FlyingButton>
           </PriceRow>
         </ProductInfoBox>
