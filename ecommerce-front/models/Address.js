@@ -4,6 +4,7 @@ const AddressSchema = new Schema({
   userEmail: {type:String, unique:true, required:true},
   name: String,
   email: String,
+  state_province: String,
   city: String,
   postalCode: String,
   streetAddress: String,
