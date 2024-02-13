@@ -3,7 +3,7 @@ import {Product} from "@/models/Product";
 
 export default async function handle(req, res) {
   await mongooseConnect();
-  const {categories, sort, phrase, ...filters} = req.query;
+  const { categories, sort, phrase, page, limit = 16, ...filters } = req.query;
   let [sortField, sortOrder] = (sort || '_id-desc').split('-');
 
   const productsQuery = {};
@@ -21,12 +21,16 @@ export default async function handle(req, res) {
       productsQuery['properties.'+filterName] = filters[filterName];
     });
   }
-  console.log(productsQuery);
-  res.json(await Product.find(
+  const skip = (page - 1) * limit;
+  const response =await Product.find(
     productsQuery,
     null,
     {
-      sort:{[sortField]:sortOrder==='asc' ? 1 : -1}
+      sort: { [sortField]: sortOrder === 'asc' ? 1 : -1 },
+      skip: skip,
+      limit: parseInt(limit),
     })
-  );
+    console.log(response.length)
+    // .skip(skip).limit(limit)
+  res.json(response);
 }
