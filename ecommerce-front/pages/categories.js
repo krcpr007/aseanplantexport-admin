@@ -10,6 +10,7 @@ import {mongooseConnect} from "@/lib/mongoose";
 import {getServerSession} from "next-auth";
 import {authOptions} from "@/pages/api/auth/[...nextauth]";
 import {WishedProduct} from "@/models/WishedProduct";
+import Breadcrumb from "@/components/BreadCrumb";
 
 const CategoryGrid = styled.div`
   display: grid;
@@ -55,6 +56,11 @@ export default function CategoriesPage({mainCategories,categoriesProducts,wished
     <>
       <Header />
       <Center>
+        <div className="mt-2">
+        <Breadcrumb pages={[
+           { name: "Categories", href:'/categories', current: false },
+        ]}/>
+        </div>
         {mainCategories.map(cat => (
           <CategoryWrapper key={cat._id}>
             <CategoryTitle>
