@@ -4,7 +4,7 @@ import Hero from './Hero'
 import About from './About'
 import Testimonials from './Testimonials'
 import Blog from './Blog'
-import Footer from './Footer'
+// import Footer from './Footer'
 import WelcomeNote from '@/components/WelcomeNote'
 import Categories from './Categories'
 import FewProducts from './FewProducts'
@@ -20,7 +20,7 @@ function LandingPage({ newProducts ,wishedNewProducts}) {
       <Categories />
       <FewProducts newProducts={newProducts } wishedNewProducts={wishedNewProducts}/>
       <WelcomeNote />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   )
 }

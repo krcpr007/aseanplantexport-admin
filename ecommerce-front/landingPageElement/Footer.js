@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaCheckDouble } from "react-icons/fa";
+import Link from 'next/link'
 function Footer() {
     return (
         <>{/* <!-- start footer --> */}
@@ -33,16 +34,16 @@ function Footer() {
                         <h5 className="uppercase tracking-wider font-semibold text-gray-500">Treatments</h5>
                         <ul className="mt-4">
                             <li>
-                                <a href="#" className="hover:underline me-4 md:me-6">About</a>
+                                <Link href="/about-us" className="hover:underline me-4 md:me-6">About</Link>
                             </li>
                             <li>
-                                <a href="#" className="hover:underline me-4 md:me-6">Privacy Policy</a>
+                                <Link href="/privacy-policy" className="hover:underline me-4 md:me-6">Privacy Policy</Link>
                             </li>
                             <li>
-                                <a href="#" className="hover:underline me-4 md:me-6">Licensing</a>
+                                <Link href="/licensing" className="hover:underline me-4 md:me-6">Licensing</Link>
                             </li>
                             <li>
-                                <a href="#" className="hover:underline">Contact</a>
+                                <Link href="/contact-us" className="hover:underline">Contact</Link>
                             </li>
                         </ul>
                     </div>
@@ -60,11 +61,11 @@ function Footer() {
                                         </svg>
                                     </span>
                                     <span className="ml-3">
-                                        1985 Kerry Way, Whittier, CA, USA
+                                    Sukhumvit 50, Bangkok, 10260, Thailand
                                     </span>
                                 </a>
                             </li>
-                            <li className="mt-4">
+                            {/* <li className="mt-4">
                                 <a href="#" title="" className="flex items-center opacity-75 hover:opacity-100">
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -78,7 +79,7 @@ function Footer() {
                                         Closed on Weekends
                                     </span>
                                 </a>
-                            </li>
+                            </li> */}
                             <li className="mt-4">
                                 <a href="#" title="" className="flex items-center opacity-75 hover:opacity-100">
                                     <span>
@@ -89,7 +90,7 @@ function Footer() {
                                         </svg>
                                     </span>
                                     <span className="ml-3">
-                                        +1 562-789-1935
+                                        +66 xxx-xxx-xxxx
                                     </span>
                                 </a>
                             </li>
@@ -103,7 +104,7 @@ function Footer() {
                                         </svg>
                                     </span>
                                     <span className="ml-3">
-                                        peter@example.com
+                                        aseanplantexport@gmail.com
                                     </span>
                                 </a>
                             </li>

@@ -1,6 +1,5 @@
 import Header from '@/landingPageElement/Header'
 import React from 'react'
-import Footer from '@/landingPageElement/Footer'
 import Link from 'next/link'
 function AboutUs() {
   return (
@@ -88,7 +87,6 @@ function AboutUs() {
             </Link>
           </div>
         </section>
-      <Footer/>
     </>
   )
 }
