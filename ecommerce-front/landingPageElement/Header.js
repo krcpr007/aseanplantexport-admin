@@ -1,4 +1,4 @@
-import React, { useContext,useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { FaLocationDot } from "react-icons/fa6";
 import { VscAccount } from "react-icons/vsc";
@@ -18,13 +18,13 @@ function Header() {
                             <li>
                                 <div className="flex items-center h-10">
                                     <FaLocationDot className='text-xl' />
-                                    <span className="ml-2">1985 Kerry Way, Whittier, CA, USA</span>
+                                    <span className="ml-2">Sukhumvit 50, Bangkok, 10260, Thailand</span>
                                 </div>
                             </li>
                             <li className="ml-6">
                                 <div className="flex items-center h-10">
                                     <FaPhoneAlt className='text-xl' />
-                                    <span className="ml-2">+1 562-789-1935</span>
+                                    <span className="ml-2">+66 xxx-xxx-xxxx</span>
                                 </div>
                             </li>
                             
@@ -39,7 +39,7 @@ function Header() {
                             </Link>
                             </li>
                             <li className="">
-                                <TfiHeadphoneAlt className='text-xl mx-2' />
+                                <Link href="/contact-us"><TfiHeadphoneAlt className='text-xl mx-2' /></Link>
                             </li>
                             <li>
                                 <Link href="/account"><VscAccount className='text-xl mx-2' /></Link>
@@ -48,7 +48,7 @@ function Header() {
                                 <Link href="/account"><FaHeart className='text-xl mx-2' /></Link>
                             </li>
                             <li>
-                                <Link href="/cart"><FiShoppingCart className='text-xl mx-2' /> <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-green-500 border-2 border-white rounded-full -top-2 -end-2 ">{cartProducts.length}</div></Link>
+                                <Link href="/checkout"><FiShoppingCart className='text-xl mx-2' /> <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-green-500 border-2 border-white rounded-full animate-pulse -top-2 -end-2 ">{cartProducts.length}</div></Link>
                             </li>
                         </ul>
                     </div>
@@ -94,11 +94,11 @@ function Header() {
                                     <Link className="py-2 inline-block md:text-white md:px-2 font-semibold"
                                         href="/categories">Categories</Link>
                                 </li>
-                                <li className="md:ml-4"><a className="py-2 inline-block md:text-white md:px-2 font-semibold" href="#">Contact
-                                    Us</a></li>
+                                <li className="md:ml-4"><Link className="py-2 inline-block md:text-white md:px-2 font-semibold" href="/contact-us">Contact
+                                    Us</Link></li>
                                 <li className="md:ml-4"><Link className="py-2 inline-block md:text-white md:px-2 font-semibold" href="/account">Account</Link></li>
                                 <li className="md:ml-4 md:hidden lg:block"><Link className="py-2 inline-block md:text-white md:px-2 font-semibold"
-                                    href="/cart">Cart</Link></li>
+                                    href="/checkout">Cart</Link></li>
                                 <li className="md:ml-6 mt-3 md:mt-0">
                                     <Link className="inline-block font-semibold px-4 py-2 text-white bg-green-600 md:bg-transparent md:text-white border border-white rounded" href="/products">See All Products</Link>
                                 </li>
