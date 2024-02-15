@@ -2,7 +2,8 @@ import {mongooseConnect} from "@/lib/mongoose";
 const stripe = require('stripe')(process.env.STRIPE_SK);
 import {buffer} from 'micro';
 import {Order} from "@/models/Order";
-
+//@important 
+/// just for example not the real webhook secret and webhook 
 const endpointSecret = "whsec_634d3142fd2755bd61adaef74ce0504bd2044848c8aac301ffdb56339a0ca78d";
 
 export default async function handler(req,res) {
@@ -19,6 +20,27 @@ export default async function handler(req,res) {
   }
 
   // Handle the event
+  // switch (event.type) {
+  //   case 'checkout.session.async_payment_failed':
+  //     const checkoutSessionAsyncPaymentFailed = event.data.object;
+  //     // Then define and call a function to handle the event checkout.session.async_payment_failed
+  //     break;
+  //   case 'checkout.session.async_payment_succeeded':
+  //     const checkoutSessionAsyncPaymentSucceeded = event.data.object;
+  //     // Then define and call a function to handle the event checkout.session.async_payment_succeeded
+  //     break;
+  //   case 'checkout.session.completed':
+  //     const checkoutSessionCompleted = event.data.object;
+  //     // Then define and call a function to handle the event checkout.session.completed
+  //     break;
+  //   case 'checkout.session.expired':
+  //     const checkoutSessionExpired = event.data.object;
+  //     // Then define and call a function to handle the event checkout.session.expired
+  //     break;
+  //   // ... handle other event types
+  //   default:
+  //     console.log(`Unhandled event type ${event.type}`);
+  // }
   switch (event.type) {
     case 'checkout.session.completed':
       const data = event.data.object;
