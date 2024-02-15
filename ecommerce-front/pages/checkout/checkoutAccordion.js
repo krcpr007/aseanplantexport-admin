@@ -265,7 +265,7 @@ function BillingDetailsAccordion({
                               // defaultValue={country}
                             /> */}
                           <select id="countries" onChange={(e) => setCountry(e.target.value)} className="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent">
-                            <option selected>Choose a country</option>
+                            <option selected value="" disabled>Choose a country</option>
                             <option value="USA">United States</option>
                             <option value="Alaska">Alaska</option>
                             <option value="Canada">Canada</option>
