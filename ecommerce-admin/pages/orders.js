@@ -44,8 +44,9 @@ export default function OrdersPage() {
             </td>
             <td>
               {order.name} {order.email}<br />
+              {order.streetAddress}<br/>
               {order.city} {order.postalCode} {order.country}<br />
-              {order.streetAddress}
+              <span className="text-red-600">{order.commentsAboutOrder}</span>
             </td>
             <td>
               {order.line_items.map(l => (

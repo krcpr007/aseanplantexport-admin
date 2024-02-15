@@ -9,6 +9,7 @@ export default function ProductForm({
   title: existingTitle,
   description: existingDescription,
   price: existingPrice,
+  weight: existingWeight,
   images: existingImages,
   category: assignedCategory,
   properties: assignedProperties,
@@ -18,6 +19,7 @@ export default function ProductForm({
   const [description, setDescription] = useState(existingDescription || '');
   const [category, setCategory] = useState(assignedCategory || '');
   const [productProperties, setProductProperties] = useState(assignedProperties || {});
+  const [weight, setWeight] = useState(existingWeight || '');
   const [price, setPrice] = useState(existingPrice || '');
   const [images, setImages] = useState(existingImages || []);
   const [goToProducts, setGoToProducts] = useState(false);
@@ -48,7 +50,7 @@ export default function ProductForm({
   async function saveProduct(ev) {
     ev.preventDefault();
     const data = {
-      title, description, price, images, category,
+      title, description, price, weight, images, category,
       properties: productProperties
     };
     if (_id) {
@@ -177,6 +179,12 @@ export default function ProductForm({
         placeholder="description"
         value={description}
         onChange={ev => setDescription(ev.target.value)}
+      />
+      <label>Weight (in grams)</label>
+      <input
+        type="number" placeholder="weight"
+        value={weight}
+        onChange={ev => setWeight(ev.target.value)}
       />
       <label>Price (in USD)</label>
       <input
