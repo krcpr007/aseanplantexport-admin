@@ -8,7 +8,7 @@ function Footer() {
                   <FaCheckDouble className='inline m-1' /> <p>Top quality plants</p>
                   <FaCheckDouble className='inline m-1'/>  <p>No minimum order</p>
                   <FaCheckDouble className='inline m-1'/>  <p>Fast delivery</p>
-                  <FaCheckDouble className='inline m-1'/>  <p>Import every 4 weeks</p>
+                  <FaCheckDouble className='inline m-1'/>  <p>Export Everyday</p>
                   <FaCheckDouble className='inline m-1'/>  <p>Door-to-door service</p>
                   <FaCheckDouble className='inline m-1'/>  <p>All-in service</p>
                   <FaCheckDouble className='inline m-1'/>  <p>10+ years experience</p>
@@ -24,7 +24,7 @@ function Footer() {
                             <div className="w-full">
                                 <div className='relative flex justify-center'>
                                          {/* <p className='block text-sm text-gray-400'>Payment accepted with </p> <GrStripe className='text-xl text-blue-600' /> */}
-                                        <img src="logo-stripe.png" alt="" className='' />
+                                        <img src="/logo-stripe.png" alt="" className='' />
                                 </div>
                             </div>
                         </form>
