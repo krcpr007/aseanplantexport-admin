@@ -54,15 +54,15 @@ function Header() {
                     </div>
                 </div>
                 <dir className="hidden md:flex justify-evenly  text-green-600 py-3 mt-0 rounded-b">
-                    <Link href={{pathname: "/slugs/[slug]",query: { slug:'terrarium' },}}>Terrarium</Link>
+                    <Link href={{pathname: "/slugs/[slug]",query: { slug:'fern' },}}>FERN</Link>
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'adenium' },}}>Adenium</Link>
-                    <Link href={{pathname: "/slugs/[slug]",query: { slug:'aglaonema' },}}>Aglaonema</Link>
+                    <Link href={{pathname: "/slugs/[slug]",query: { slug:'mangrove' },}}>Mangrove</Link>
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'aroids' },}}>Aroids</Link>
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'bromeliads' },}}>Bromeliads</Link>
-                    <Link href={{pathname: "/slugs/[slug]",query: { slug:'cacti' },}}>Cacti</Link>
+                    <Link href={{pathname: "/slugs/[slug]",query: { slug:'plants' },}}>Plants</Link>
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'caudex' },}}>Caudex</Link>
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'colocasia' },}}>Colocasia</Link>
-                    <Link href={{pathname: "/slugs/[slug]",query: { slug:'sansevieria' },}}>Sansevieria</Link>
+                    <Link href={{pathname: "/slugs/[slug]",query: { slug:'plumeria' },}}>Plumeria</Link>
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'hoya' },}}>Hoya</Link>
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'tillandsia' },}}>Tillandsia</Link>
                 </dir>
