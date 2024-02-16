@@ -39,8 +39,7 @@ export default function Slug({ products = [], wishedProducts = [] }) {
 export async function getServerSideProps(context) {
   // Get the slug parameter from the route
   const { slug } = context.query;
-  const category = await Category.findOne({ slug: slug.toLowerCase() });
-  // console.log(category);
+  const category = await Category.findOne({ slug: { $regex: slug, $options: 'i' } });
   const categoryId = category._id;
   const products = await Product.find({ category: categoryId });
   const session = await getServerSession(context.req, context.res, authOptions);
