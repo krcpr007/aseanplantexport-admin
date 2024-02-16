@@ -95,8 +95,8 @@ export default async function handler(req, res) {
         shipping_rate_data: {
           display_name: 'shipping fee',
           type: 'fixed_amount',
-          // fixed_amount: { amount: shippingFeeCents, currency: 'USD' },
-         fixed_amount: { amount: calculateShippingPrice(27,country)*100, currency: 'USD' },
+          fixed_amount: { amount: shippingFeeCents, currency: 'USD' },
+        //  fixed_amount: { amount: calculateShippingPrice(27,country)*100, currency: 'USD' },
         },
       }
     ],
