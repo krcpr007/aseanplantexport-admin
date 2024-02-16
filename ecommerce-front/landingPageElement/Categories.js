@@ -33,7 +33,7 @@ function Categories() {
                 </div> */}
                 <div className='relative'>
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'adenium' },}}>
-                        <Image width={300} height={500} loading='lazy'  className="h-auto max-w-full rounded-lg" src="/categories/adenium.webp" alt="" />
+                        <Image width={300} height={500} loading='lazy'  className="h-auto max-w-full rounded-lg" src="/categories/Adenium.webp" alt="" />
                     </Link>
                     <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg'>
                         <p className='text-black font-medium text-xl px-3'>Adenium</p>
