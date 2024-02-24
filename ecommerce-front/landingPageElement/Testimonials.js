@@ -12,10 +12,10 @@ function Testimonials() {
 
                     <div className="w-full md:max-w-md md:mx-auto lg:w-1/2 lg:px-8 mt-12 mt:md-0">
                         <div className="bg-gray-400 w-full h-72 rounded-lg">
-                            <Image width={500} height={500} loading='lazy' className='border-2 border-green-800 rounded'  src="/Tillandsia.webp" alt="" />
+                            <Image width={600} height={500} loading='lazy' className='border-2 border-green-600 rounded w-full'  src="/Tillandsia.webp" alt="" />
                         </div>
 
-                        <p className="italic text-sm mt-2 text-center">Tillandsia</p>
+                        <p className="italic text-sm mt-2 text-center font-medium">Tillandsia</p>
                     </div>
                 </div>
             </section>

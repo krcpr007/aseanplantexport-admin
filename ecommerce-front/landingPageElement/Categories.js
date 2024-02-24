@@ -16,16 +16,16 @@ function Categories() {
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'aroids' },}}>
                         <Image width={300} height={500} loading='lazy' className="h-auto max-w-full rounded-lg" src="/categories/aroids.webp" alt="" />
                     </Link>
-                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg'>
-                        <p className='text-black font-medium text-xl px-3'>Aroids</p>
+                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg rounded-bl-lg'>
+                        <p className='text-white font-medium text-xl px-3'>Aroids</p>
                     </div>
                 </div>
                 <div className='relative'>
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'hoya' },}}>
                         <Image width={300} height={500} loading='lazy'  className="h-auto max-w-full rounded-lg" src="/categories/hoya.webp" alt="" />
                     </Link>
-                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg'>
-                        <p className='text-black font-medium text-xl px-3'>Hoya</p>
+                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg rounded-bl-lg  shadow-md'>
+                        <p className='text-white font-medium text-xl px-3'>Hoya</p>
                     </div>
                 </div>
                 {/* <div>
@@ -35,16 +35,16 @@ function Categories() {
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'adenium' },}}>
                         <Image width={300} height={500} loading='lazy'  className="h-auto max-w-full rounded-lg" src="/categories/Adenium.webp" alt="" />
                     </Link>
-                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg'>
-                        <p className='text-black font-medium text-xl px-3'>Adenium</p>
+                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg rounded-bl-lg'>
+                        <p className='text-white font-medium text-xl px-3'>Adenium</p>
                     </div>
                 </div>
                 <div className='relative'>
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'aglaonema' },}}>
                         <Image width={300} height={500} loading='lazy'  className="h-auto max-w-full rounded-lg" src="/categories/Aglaonema.webp" alt="" />
                     </Link>
-                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg'>
-                        <p className='text-black font-medium text-xl px-3'>Aglaonema</p>
+                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg rounded-bl-lg'>
+                        <p className='text-white font-medium text-xl px-3'>Aglaonema</p>
                     </div>
                 </div>
                 {/* <div>
@@ -54,40 +54,40 @@ function Categories() {
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'tillandsia' },}}>
                         <Image width={300} height={500} loading='lazy'  className="h-auto max-w-full rounded-lg" src="/categories/Tillandsia.jpg" alt="" />
                     </Link>
-                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg'>
-                        <p className='text-black font-medium text-xl px-3'>Tillandsia</p>
+                    <div className='absolute top-0 right-0 bg-green-600 rounded-lg'>
+                        <p className='text-white font-medium text-xl px-3'>Tillandsia</p>
                     </div>
                 </div>
                 <div className='relative'>
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'caudex' },}}>
                         <Image width={300} height={500} loading='lazy'  className="h-auto max-w-full rounded-lg" src="/categories/Caudex.webp" alt="" />
                     </Link>
-                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg'>
-                        <p className='text-black font-medium text-xl px-3'>Caudex</p>
+                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg rounded-bl-lg'>
+                        <p className='text-white font-medium text-xl px-3'>Caudex</p>
                     </div>
                 </div>
                 <div className='relative'>
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'cacti' },}}>
                          <Image width={300} height={500} loading='lazy'  className="h-auto max-w-full rounded-lg" src="/categories/Cacti.webp" alt="" />
                     </Link>
-                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg'>
-                        <p className='text-black font-medium text-xl px-3'>Cacti</p>
+                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg rounded-bl-lg'>
+                        <p className='text-white font-medium text-xl px-3'>Cacti</p>
                     </div>
                 </div>
                 <div className='relative'>
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'terrarium' },}}>
                          <Image width={300} height={500} loading='lazy'  className="h-auto max-w-full rounded-lg" src="/categories/Terrarium.webp" alt="" />
                     </Link>
-                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg'>
-                        <p className='text-black font-medium text-xl px-3'>Terrarium</p>
+                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg rounded-bl-lg'>
+                        <p className='text-white font-medium text-xl px-3'>Terrarium</p>
                     </div>
                 </div>
                 <div className='relative'>
                     <Link href={{pathname: "/slugs/[slug]",query: { slug:'colocasia' },}}>
                         <Image width={300} height={500} loading='lazy'  className="h-auto max-w-full rounded-lg" src="/categories/Colocasia.webp" alt="" />
                     </Link>
-                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg'>
-                        <p className='text-black font-medium text-xl px-3'>Colocasia</p>
+                    <div className='absolute top-0 right-0 bg-green-600 rounded-tr-lg rounded-bl-lg'>
+                        <p className='text-white font-medium text-xl px-3'>Colocasia</p>
                     </div>
                 </div>
                 {/* <div>
