@@ -9,7 +9,7 @@ import ProductImages from "@/components/ProductImages";
 import CartIcon from "@/components/icons/CartIcon";
 import FlyingButton from "@/components/FlyingButton";
 import ProductReviews from "@/components/ProductReviews";
-
+import { useState } from "react";
 const ColWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -29,6 +29,8 @@ const Price = styled.span`
 `;
 
 export default function ProductPage({ product }) {
+
+  const [blur, setBlur] = useState(false);
   const linkIfy = (text) => {
     //eslint-disable-next-line
     let urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
@@ -36,27 +38,30 @@ export default function ProductPage({ product }) {
       return '<a style="color:#70B5F9;text-decoration:underline" target="_blank" className="hover:underline" href="' + url + '">' + url + '</a>';
     });
   }
+  const RenderHtml = (inputString) => {
+    const htmlString = inputString
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&quot;/g, '"')
+      .replace(/&amp;/g, "&");
+
+    // Wrap the HTML string with <div> tags
+    const wrappedHtmlString = `<div>${htmlString}</div>`;
+    return wrappedHtmlString;
+  };
+  // const RenderHtml2 = (html) => {
+  //   return <div dangerouslySetInnerHTML={{ __html: html }} />;
+  // };
   return (
     <>
       <Header />
       <Center>
         <ColWrapper>
           <WhiteBox>
-            <ProductImages images={product.images} />
+            <ProductImages images={product.images} setBlur={setBlur} />
           </WhiteBox>
           <div>
             <Title>{product.title}</Title>
-            {/* <p>{product.description}</p> */}
-            <p className='text-sm font-medium'>{product.description?.split(new RegExp('\r?\n', 'g')).map(function (item, idx) {
-              // it replace the enter key or \n  with <br/> tag.
-              return (
-                <span key={idx}>
-                  {<span dangerouslySetInnerHTML={{ __html: linkIfy(item) }} />}
-                  {/* {item} */}
-                  <br />
-                </span>
-              )
-            })}</p>
             <PriceRow>
               <div>
                 <Price>${product.price}</Price>
@@ -69,6 +74,7 @@ export default function ProductPage({ product }) {
             </PriceRow>
           </div>
         </ColWrapper>
+            <div dangerouslySetInnerHTML={{ __html: linkIfy(RenderHtml(product.description)) }} />
         <ProductReviews product={product} />
       </Center>
     </>
